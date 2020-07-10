@@ -1,0 +1,81 @@
+
+#create a file 
+
+touch filename  // command..... create a file sanket.....
+
+touch sanket   //  eg 
+
+cat >> filename   // command ... adding contents into the file....  
+
+cat >> sanket    // eg
+
+//added contents below:
+
+hello iam writing this on terminal .....
+EOF
+
+eof
+exit
+
+
+i think it will append......!
+again it will write from terminal 
+
+
+yes it has append ..... ! 
+its 3rd time i write on it ......
+ 
+// added above 
+
+*************************************************************************************
+
+#make a copy of same file 
+
+touch filename   // command create a file
+
+touch sanket  // eg 
+
+cat sanket >> newcopy  // it will copy all those things into the newcopy file
+
+************************************************************************************
+
+# open newcopy file
+
+cat filename  // select a file to open 
+
+cat newcopy    // eg
+.
+.
+.
+.
+#will get same contents as same as sanket.... 
+.
+.
+.
+.
+
+***************************************************************************************
+
+# remove file... 
+
+rm filename  // command .... it will remove the copy file.... 
+
+rm newcopy // eg 
+
+
+*****************************************************************************************
+#make directories
+
+mkdir new-dir   // command...... create a new Directory we add file as per out need .... 
+
+mkdir new-dir   // eg 
+
+****************************************************************************************
+
+#remove directories 
+
+rmdir directory_name   // command....   remove new-dir directory...
+
+rmdir new-dir  //  eg 
+
+****************************************************************************************
