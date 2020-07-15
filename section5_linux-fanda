@@ -1,0 +1,76 @@
+##Section-5 Manipulating data using Linux Commands.
+
+grep command: this command is used to get the file having the grep pattern.
+
+eg,
+ls -ltr ׀ grep rwxrwxrwx // this command gets the output as the files having read write execute permissions.
+
+ls -ltr ׀ grep Sanket        // gets the files having the name Sanket
+
+ls -ltr ׀ grep rwxrwxrwx: in this command, we put the input as an argument as rwxrwxrwx. it shows the output of having the same permissions on files.
+
+grep ERROR add.py // it gives an error message if this file contains an error.
+
+grep BendUSA records // example
+
+In the above command, BeandUSA is an entity in the records file. If we want to check the occurrence of beandUSA in the records file.
+
+It is a very helpful command to check the file contents using the grep patterns. ׀ head is used to show only the first few records in the list.
+
+grep -v 1 records // example
+In the above command, it will negate sr no 1 and print all the other files expect 1.
+
+***************************************************************************************************************************
+
+find command //is used to find the files on the directories and files as well.
+
+eg,
+find . -name ".log"
+In the above command, it will find all the files which have ' .log ' in cd/var/log directory.
+
+***************************************************************************************************************************
+
+cut command:
+If we want to find the particular file and the particular text we used the cut command.
+
+eg,
+cut -d, -f4 records //example
+
+In the above command, we find records of the fourth column in records files. 
+
+cut -c -23 records //Example
+
+In the Above command, it returns the first 23 characters in the records files. 
+
+***************************************************************************************************************************
+
+Sort:
+
+the sort command is used to sort the file contents in a string format.
+
+eg,
+sort records // it will sort the contents of file considering a string.
+
+sort -n records // sorts it numeric values.
+
+**************************************************************************************************************************
+Du:
+
+du -s: gets the size of the directory.
+
+eg,
+
+du -s *। sort -n // it will get the files containing most of the size and it will be sorted in ascending order.
+
+**************************************************************************************************************************
+
+unique: its used for unique items.
+
+eg,
+
+cut -d, -f4 records । sort । uniq -c //example
+
+The above command gets the unique values for records file with there count.
+in sort, it will only sort the data but in unique it will get the unique values and we will count its occurrence. 
+
+**************************************************************************************************************************
