@@ -1,0 +1,163 @@
+##Section-6 
+##System commands and Standard Directories.
+
+uname -a:   //This command gives us a details of system kernal. 
+
+eg, 
+
+uname -a    // Linux sanket-Inspiron-15-3567 ......0-26-generic #30-Ubuntu SMP Mon Apr 20 16:58:30 UTC 2020 x86.............. GNU/Linux  
+
+******************************************************************************************************************************************
+
+lscpu     // gets the details of CPU.
+
+*****************************************************************************************************************************************
+
+uptime    // gives the number of user on a system.
+
+*****************************************************************************************************************************************
+
+top      // it gives top processes that will executes on system.
+
+*****************************************************************************************************************************************
+
+free -h   // shows the details of memeory with human redable form 
+
+eg,
+
+free -h  // shows in GB 
+
+  total        used        free      shared  buff/cache   available
+Mem:          7.6Gi       2.0Gi       3.9Gi       382Mi       1.7Gi       4.9Gi
+Swap:         2.0Gi          0B       2.0Gi
+
+free     // shows in MB or Bytes 
+
+total        used        free      shared  buff/cache   available
+Mem:        7929108     2095300     4102144      392156     1731664     5178316
+Swap:       2097148           0     2097148
+
+****************************************************************************************************************************************
+
+df     // it gives free and used storage details on a disks.
+ 
+eg, 
+
+ df -h    // shows in human redable form.
+
+
+//output below .....
+ 
+ Filesystem      Size  Used Avail Use% Mounted on
+udev            3.8G     0  3.8G   0% /dev
+tmpfs           775M  1.9M  773M   1% /run
+/dev/sda6        58G   12G   43G  22% /
+tmpfs           3.8G   96M  3.7G   3% /dev/shm
+tmpfs           5.0M  4.0K  5.0M   1% /run/lock
+tmpfs           3.8G     0  3.8G   0% /sys/fs/cgroup
+/dev/loop0       55M   55M     0 100% /snap/core18/1754
+/dev/loop1       55M   55M     0 100% /snap/core18/1880
+/dev/loop3      241M  241M     0 100% /snap/gnome-3-34-1804/24
+/dev/loop2      162M  162M     0 100% /snap/gnome-3-28-1804/128
+/dev/loop5       63M   63M     0 100% /snap/gtk-common-themes/1506
+/dev/loop4      256M  256M     0 100% /snap/gnome-3-34-1804/36
+/dev/loop6       44M   44M     0 100% /snap/snap-store/415
+/dev/loop7       50M   50M     0 100% /snap/snap-store/467
+/dev/loop8       30M   30M     0 100% /snap/snapd/8140
+/dev/loop9       30M   30M     0 100% /snap/snapd/8542
+tmpfs           775M   36K  775M   1% /run/user/1000
+
+***************************************************************************************************************************************
+ 
+
+du -s            //gives the size of directory 
+
+eg, 
+2556640       //size of directory.
+
+du -sh .    //2.5G
+
+du -h .        // givess the each and every details of directory of our system.
+
+eg, 
+     //output ....
+ 
+24K	./.cache/mozilla/firefox/h4v9hwqk.default-release/settings/main
+28K	./.cache/mozilla/firefox/h4v9hwqk.default-release/settings
+13M	./.cache/mozilla/firefox/h4v9hwqk.default-release/startupCache
+1.1G	./.cache/mozilla/firefox/h4v9hwqk.default-release
+4.0K	./.cache/mozilla/firefox/osrq9x84.default
+1.1G	./.cache/mozilla/firefox
+1.1G	./.cache/mozilla
+1.6G	./.cache
+127M	./Downloads
+2.5G	
+
+
+*****************************************************************************************************************************************
+ 
+##network details and configuration.... 
+ 
+netstat  // gives the details of network traffics and network details.   
+
+eg, 
+
+//output......
+
+Active Internet connections (w/o servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State      
+tcp        0      0 sanket-Inspiron-1:47742 184.220.186.35.bc:https ESTABLISHED
+tcp        0      0 sanket-Inspiron-1:46150 ec2-44-228-114-75:https ESTABLISHED
+tcp        0      0 sanket-Inspiron-1:55816 server-13-227-178:https ESTABLISHED
+tcp        0      0 sanket-Inspiron-1:52600 a104-120-91-52.de:https ESTABLISHED
+tcp        0      0 sanket-Inspiron-15-:ssh localhost:54798         ESTABLISHED
+tcp        0      0 sanket-Inspiron-1:60472 lb-140-82-112-26-:https ESTABLISHED
+tcp        0      0 sanket-Inspiron-1:49024 server-13-227-178:https ESTABLISHED
+tcp        0      0 sanket-Inspiron-1:41830 ec2-35-174-127-31:https ESTABLISHED
+tcp        0      0 localhost:54798         sanket-Inspiron-15-:ssh ESTABLISHED
+
+//
+
+netstat -tulpn     //  this command is used to know which port is used for the perticular process
+
+eg, 
+
+netstat -tulpn । grep 8042   // 8042 port is used for hadoop. 	
+
+*******************************************************************************************************************************************
+
+##service manager ......
+
+system sshd status       // gives the service details.
+
+system sshd restart      // restart the perticular service.
+
+
+##enable or desable services....
+
+system enable sshd     // automatically start each and every service manually.
+
+****************************************************************************************************************************************
+
+##safe mode ......
+
+there are differect safe modes of of system  
+
+init 1     // enable the safe mode 
+
+init 2 
+
+init 3 
+
+init 4    
+
+******************************************************************************************************************************************
+
+##managng processes using ps
+
+ps -ef      // gets the list of processes.
+
+ps -fu      // get process running for the user related details.
+
+*****************************************************************************************************************************************
+
