@@ -1,0 +1,194 @@
+##regular expressions 
+
+man grep     //get details of grep command
+
+eg,
+
+grep Austria records   // search Austria in records fils .... 
+                       // if its present in the file it will shown 
+                       
+                       
+grep -i Austria records   // -i is used to search Austria in lowercase as well as uppercase in the file 
+
+
+grep -iv Austria records   // it shows the result which did not contain austria.
+  
+caret '^' is use to seach the front text....
+dollar '$' is use to seach the end of the line...
+
+grep -w Austria records    // -w is used for search by word
+
+*********************************************************************************************************************
+##regular expression characters 
+
+grep -E [A-Z]+$ records     // shows the result which contain capital A-Z at end of the list.
+
+eg, 
+
+grep -E [A-Z]+$ records 
+//output ...
+
+16,Bigfoot Breweries,Cheryl Saylor,BendUSA
+1,Exotic Liquids,Charlotte Cooper,LondonUK
+69,Georg,Pipps_Salzburg,AUSTRIA
+  
+//
+grep  '[A-Z]\+$' records   // ecp character 
+//output ...
+16,Bigfoot Breweries,Cheryl Saylor,BendUSA
+1,Exotic Liquids,Charlotte Cooper,LondonUK
+69,Georg,Pipps_Salzburg,AUSTRIA 
+  
+grep '[0-9]' records     // shows the result which contain 0-9 in the records. 
+//output...
+
+18,Aux joyeux ecclésiastiques,Guylène Nodier,ParisFrance
+16,Bigfoot Breweries,Cheryl Saylor,BendUSA
+27,Escargots Nouveaux,Marie Delamare,MontceauFrance
+1,Exotic Liquids,Charlotte Cooper,LondonUK
+12,Patricio,Simpson Buenos Aires,Argentina
+20,Roland,Mendel Graz,Austria
+50,Catherine,Dewey Bruxelles,Belgium
+
+//
+  
+cut -d, -f1 records|grep -E '[0-9]+'  //example 
+//output...
+18
+16
+5
+27
+1
+12
+54
+64
+20
+59
+69
+50
+76
+
+//
+
+cut -d, -f1 records|grep -E '[0-2]+'  // only shows records which contain 0-2 
+//output.....
+
+18
+16
+27
+1
+12
+20
+50
+
+//
+
+cut -d, -f1 records|grep -E '[0-2]+'|sort -n // same output bt its sorts..
+//output...
+
+1
+12
+16
+18
+20
+27
+50
+
+//
+
+cut -d, -f2 records|grep -E '[[:lower:]]'  // shos the records which having lowercase latters...]
+//output....
+Aux joyeux ecclésiastiques
+Bigfoot Breweries
+Cooperativa de Quesos
+Escargots Nouveaux
+Exotic Liquids
+Patricio
+Yvonne
+Sergio
+Roland
+Georg
+Georg
+Catherine
+Pascale
+
+//
+
+cut -d, -f2 records|grep -E '[[:lower:]]'|wc -l   //count lowecase in rows
+//output...
+13
+
+//
+
+*****************************************************************************************************************************
+##overview of Editor
+
+//insert into the file 
+
+go to the destination press i then enter text, if the work is done then press again i. 
+
+// delete contents 
+
+when curser is in  middle of the string press d, if we want to delete all the string to the end press shift+$ or(shift+d) and
+if we want to delete the string to the start ( left ) press shift+^ 
+
+//undo the changes
+
+press u 
+
+//copy text
+
+press yy
+
+//copy multiple lines
+
+press y+no.of lines+y
+
+//pest the copyed text 
+
+press shift+p
+
+//Delete complete row or line 
+
+press dd 
+
+//delete more no. of rows (line)
+
+press d+no.of rows+d 
+
+//delete perticular character 
+
+press x
+
+//searching a perticulat text 
+
+/search text ... 
+
+eg,    /50 press enter      //shows all the text which have 50
+  
+
+//find and replace 
+
+:%s/findtext/replacetext      // only for single occurance
+
+:%s/finftext/replacetext/g    // g for global all text will be change.   
+
+
+//without saving the changes quite
+
+:q!                           // without saving the changes it will quite     
+
+//wright and quite 
+
+:wc   and   :x               //save the changes  
+
+
+//goto next file or switch next files..
+
+:n                          //open next file
+
+//from shell write any command 
+
+:!command  
+
+eg,     :!ls -ltr                     // shows all the files contains in a directory.
