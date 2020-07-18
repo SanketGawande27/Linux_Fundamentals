@@ -51,7 +51,7 @@ grep '[0-9]' records     // shows the result which contain 0-9 in the records.
 50,Catherine,Dewey Bruxelles,Belgium
 
 //
-  
+************************************************************************************************************************  
 cut -d, -f1 records|grep -E '[0-9]+'  //example 
 //output...
 18
@@ -127,38 +127,54 @@ cut -d, -f2 records|grep -E '[[:lower:]]'|wc -l   //count lowecase in rows
 
 go to the destination press i then enter text, if the work is done then press again i. 
 
+*****************************************************************************************************************************
+
 // delete contents 
 
 when curser is in  middle of the string press d, if we want to delete all the string to the end press shift+$ or(shift+d) and
 if we want to delete the string to the start ( left ) press shift+^ 
 
+****************************************************************************************************************************
+
 //undo the changes
 
 press u 
+
+****************************************************************************************************************************
 
 //copy text
 
 press yy
 
+***************************************************************************************************************************
 //copy multiple lines
 
 press y+no.of lines+y
 
+*****************************************************************************************************************************
 //pest the copyed text 
 
 press shift+p
 
+****************************************************************************************************************************
+7
 //Delete complete row or line 
 
 press dd 
+
+***************************************************************************************************************************
 
 //delete more no. of rows (line)
 
 press d+no.of rows+d 
 
+**************************************************************************************************************************
+
 //delete perticular character 
 
 press x
+
+*************************************************************************************************************************
 
 //searching a perticulat text 
 
@@ -166,6 +182,7 @@ press x
 
 eg,    /50 press enter      //shows all the text which have 50
   
+**************************************************************************************************************************
 
 //find and replace 
 
@@ -173,22 +190,30 @@ eg,    /50 press enter      //shows all the text which have 50
 
 :%s/finftext/replacetext/g    // g for global all text will be change.   
 
+************************************************************************************************************************
 
 //without saving the changes quite
 
 :q!                           // without saving the changes it will quite     
 
+*************************************************************************************************************************
+
 //wright and quite 
 
 :wc   and   :x               //save the changes  
 
+************************************************************************************************************************
 
 //goto next file or switch next files..
 
 :n                          //open next file
+
+***********************************************************************************************************************
 
 //from shell write any command 
 
 :!command  
 
 eg,     :!ls -ltr                     // shows all the files contains in a directory.
+
+**************************************************************************************************************************
