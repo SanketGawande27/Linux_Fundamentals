@@ -1,0 +1,133 @@
+##Overview of sed 
+
+sed : it mostly used for muniplating string, and it gives more accurate result as compared to grep, it is more flexible than grep as shown in below.
+
+sed -e 's/Full Time/Full/g' emptable       // it converts full time to full in emptable. but it does not update a file.
+
+
+sed -e 's/Full Time/Full/g' emptable > updateemptable      // in this command the updated result will move to the updateemptable file.
+ 
+sed -i 's/Full Time/Full/g' emptable                      // it will directly update the orignal file, we did not need to create a another file for update. 
+
+****************************************************************************************************************************************************************
+
+##awk 
+
+awk: with awk commands we add a logic to process data as shown in below.
+
+awk -F"," '{print $1}' emptable     // it will shows the first column of emptable. as compared to cut command awk is more flixable
+                                    //   we directly add logic  within '{ }' to process data. 
+                                    
+
+awk -F"," '{print $0}' emptable    //if we want all the data we simply add 0 with $, it shows entire data of file.
+     
+      .
+      .
+      .
+      .
+      .
+      
+as per our logic we write any logic expressions with awk....
+
+****************************************************************************************************************************************************************
+##Shell Scripting 
+
+shell scripting: if we want to write a code in shell then we write the following steps on terminal.
+
+1. vi hello_world.sh            //create a file called hello_world.
+2. source hello_world.sh        // execute file. 
+
+// another way to execute a file 
+
+1. chmod u+x                             //give execute permission to the file.  
+2. complete file path/file name.sh       // complete path for execute a file.
+3. ./filename.sh                         // shortcut to execute file.
+   
+   
+eg,
+
+echo "Hello World"  
+   
+//output....
+
+Hello World 
+
+// 
+
+.......................................................................................
+
+function hello(){
+
+   echo "Hello" $1
+
+}
+
+name=$1
+if [ $name == "Sanket" ]; then
+     name1=SANKET
+fi
+
+hello $name1
+
+// output ....
+
+Hello SANKET
+
+.................................................................................... 
+
+##Debug files.
+
+sh -x filename.sh      // it is a dehugging command it shows the execution of an program.
+
+*****************************************************************************************************************************************
+
+##nohub  
+
+nohub: if we want to execute our script in backgroung, we used nohub command after execution we get the file nohub.out as our output.
+
+*****************************************************************************************************************************************
+
+cut -d, -f2 birthdata |sort|uniq -c       //sort the unique data
+
+//output ....
+
+ 14 CHINESE
+      8 INDIANS
+     11 MALAYS
+      1 Mother Race
+      6 OTHERS
+//  
+
+
+
+awk -F, '{print $1}' birthdata |sort|uniq -c     // sort using awk 
+
+//output ....
+
+1 2018-03
+      4 2018-04
+      4 2018-05
+      3 2018-06
+      3 2018-07
+      4 2018-08
+      6 2018-09
+      5 2018-10
+      3 2018-11
+      6 2018-12
+      1 Month
+//
+
+awk -F, '{ if($2=="INDIANS") print $0}' birthdata    
+
+//output....
+
+2018-12,INDIANS,M,1
+2018-11,INDIANS,M,1
+2018-10,INDIANS,F,1
+2018-09,INDIANS,F,2
+2018-09,INDIANS,M,1
+2018-08,INDIANS,F,1
+2018-05,INDIANS,M,1
+2018-04,INDIANS,M,1
+
+//
